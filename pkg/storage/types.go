@@ -18,12 +18,21 @@ type Database struct {
 type Table struct {
 	Name string
 	Columns map[string]*Column
-	Rows []map[string]interface{}
+	Rows []*Row
 }
 
 type Column struct {
 	Name string
 	Type DataType
+}
+
+type Value struct {
+	Type DataType
+	Data interface{}
+}
+
+type Row struct {
+	Values map[string]Value
 }
 
 
