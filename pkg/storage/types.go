@@ -26,13 +26,9 @@ type Column struct {
 	Type DataType
 }
 
-type Value struct {
-	Type DataType
-	Data interface{}
-}
-
 type Row struct {
-	Values map[string]Value
+	// Values maps column names to their values
+	Values map[string]any
 }
 
 
