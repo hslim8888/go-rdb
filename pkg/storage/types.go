@@ -1,5 +1,15 @@
 package storage
 
+type DataType int 
+
+const (
+	Integer DataType = iota
+	String
+	Float
+	Boolean
+	// TODO: Add more types
+)
+
 type Database struct {
 	Name string
 	Tables map[string]*Table
@@ -13,7 +23,7 @@ type Table struct {
 
 type Column struct {
 	Name string
-	Type string
+	Type DataType
 }
 
 
