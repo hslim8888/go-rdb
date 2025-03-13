@@ -1,7 +1,6 @@
 package storage
 
-import "time"
-
+// DataType represents the type of a column
 type DataType int 
 
 const (
@@ -12,21 +11,7 @@ const (
 	// TODO: Add more types
 )
 
-type Database struct {
-	Name      string
-	Tables    map[string]*Table
-	CreatedAt time.Time
-	Version   string
-}
-
-type Table struct {
-	Name      string
-	Columns   map[string]*Column
-	Rows      []*Row
-	CreatedAt time.Time
-	UpdatedAt time.Time
-}
-
+// Column represents a table column definition
 type Column struct {
 	Name     string
 	Type     DataType
@@ -34,6 +19,7 @@ type Column struct {
 	Default  any     
 }
 
+// Row represents a single row of data
 type Row struct {
 	// Values maps column names to their values
 	Values map[string]any
