@@ -35,6 +35,7 @@ func (m *MemoryDatabaseManager) GetDatabase(name string) (*storage.Database, err
 }
 
 func (m *MemoryDatabaseManager) DropDatabase(name string) error {
+    delete(m.databases, name)
     return nil
 }
 
