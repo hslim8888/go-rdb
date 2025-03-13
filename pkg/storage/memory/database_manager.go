@@ -3,6 +3,8 @@ package memory
 import (
 	"fmt"
 	"go-rdb/pkg/storage"
+	"iter"
+	"maps"
 )
 
 type MemoryDatabaseManager struct {
@@ -39,6 +41,12 @@ func (m *MemoryDatabaseManager) DropDatabase(name string) error {
     return nil
 }
 
+// ListDatabases returns a list of all database names.
+// The order of the returned names is not guaranteed.
 func (m *MemoryDatabaseManager) ListDatabases() []string {
-    return nil
+    names := make([]string, 0, len(m.databases))
+    for name := range m.databases {
+        names = append(names, name)
+    }
+    return names
 } 
