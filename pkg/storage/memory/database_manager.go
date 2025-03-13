@@ -3,8 +3,6 @@ package memory
 import (
 	"fmt"
 	"go-rdb/pkg/storage"
-	"iter"
-	"maps"
 )
 
 type MemoryDatabaseManager struct {
